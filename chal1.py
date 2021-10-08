@@ -1,61 +1,100 @@
-#CHALLENGES 1-11
-#1
-name = input('Enter your first name')
-print('Hello',name)
+#CHALLENGES 52-59
+#52
+import random
+num=  random.randint(1,100)
+print (num)
 
-#2
-name = input('Enter your first name')
-name1 = input('Enter your surname')
-print('Hello',name, name1)
+#53
+import random
+fruits=random.choice(['Watermelon', 'Strawberry', 'Cherry', 'Orange', 'Pineapple'])
+print(fruits)
 
-#3
-print('What do you call a bear with no teeth ?\n A gummy bear !')
+#54
+import random
+ask= input('Make a choice : h or t')
+choose=random.choice(['h', 't'])
+if ask==choose :
+    print('You win')
+else :
+    print('Bad luck')
+    print('The computer has selected', choose)
 
-#4
-num1 = int(input('Enter the first number'))
-num2 = int(input('Enter the second number'))
-answer= num1+num2
-print('The answer is', answer)
+#55
+import random
+ask= int(input('Enter a number between one and five :'))
+choose= random.randint(1,5)
+if ask==choose :
+    print('Well done !')
+elif ask > choose :
+    print('The number you have chosen is too high !')
+    ask= int(input('Enter a number between one and five :'))
+    if ask==choose :
+        print('Correct !')
+    else :
+        print('You lose !')
+elif ask < choose :
+    print('The number you have chosen is too low !')
+    ask= int(input('Enter a number between one and five :'))
+    if ask==choose :
+        print('Correct !')
+    else :
+        print('You lose !')
 
-#5
-num1 = int(input('Enter the first number'))
-num2 = int(input('Enter the second number'))
-num3 = int(input('Enter the third number'))
-answer= (num1+num2)*num3
-print('The answer is', answer)
 
-#6
-totalparts= int(input('Enter the first number'))
-partseaten= int(input('Enter the second number'))
-partsleft= totalparts-partseaten
-print('The parts of pizza left are', partsleft)
+#56
+import random
+ask=int(input('Enter a number between one and ten '))
+num=random.randint(1,10)
+while ask != random :
+    ask=int(input('Enter a number between one and ten '))
 
-#7
-name= input('What is your name ?')
-age= int(input('How old are you?'))
-newage= age + 1
-print (name, ', next birthday you will be', newage)
+#57
+import random
+ask=int(input('Enter a number between one and ten '))
+num=random.randint(1,10)
+if ask > random :
+    print('The number you have chosen is too high !')
+    ask=int(input('Enter a number between one and ten '))
+elif ask < random :
+    print('The number you have chosen is too low !')
+    ask=int(input('Enter a number between one and ten '))
 
-#8
-bill= int(input('Enter the amount of the bill'))
-diners= int(input('Enter the quantity of persons'))
-billunity= bill/diners
-print('Each person must pay', billunity )
+#58 
+import random
+score=0
+for i in range (1,6) :
+    num1 = random.randint(1,50)
+    num2= random.randint(1,50)
+    correct= num1+num2
+    print(num1, '+', num2,'=')
+    answer= int(input('Your answer :'))
+    print()
+    if correct==answer : 
+        score = score + 1
 
-#9
-numberofdays= int(input('Enter the quantity of days'))
-hours= numberofdays *24
-minutes= hours*60
-seconds= minutes*60
-print('In days : \n','There are', hours, 'hours ;' , minutes,'minutes ;',  seconds ,'seconds .')
+print('You scored', score, 'out of 5')
+        
+#59
+import random 
+print('Select from red, blue, green, white, black ')
+color= random.choice(['Red', 'Blue', 'Yellow', 'White', 'Black'])  
+ask= input('Choose a color :')
+tryagain= True
+while tryagain== True :
+    theirchoice= input('Enter a color :')
+    theirchoice= theirchoice.lower()
+    if color== theirchoice :
+        print('Well done')
+        tryagain= False
+    else :
+        if color=='red' :
+            print('I bet you are seeing RED right now')
+        elif color =='blue' :
+            print ('Do not feel BLUE')
+        elif color =='green' :
+            print(' I bet you are GREEN with envy right now')
+        elif color == 'white' :
+            print('Are you WHITE as a sheet, as you did not guess correctly ? ')
+        elif color == 'pink' :
+            print('Shame you are not feeling in the PINK, as you got it  wrong')
 
-#1o
-kg= int(input('Enter the weight in kilogram: '))
-pounds= 2.204*kg
-print('The result is', pounds, 'pounds')
-
-#11
-num1=int(input('Enter a number over 100 : '))
-num2=int(input('Enter a number under 100 : '))
-answer= num1//num2
-print('The smaller number goes into the larger number', answer, 'times.')
